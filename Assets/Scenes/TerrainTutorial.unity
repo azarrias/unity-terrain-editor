@@ -131,6 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5910321}
   - component: {fileID: 5910323}
+  - component: {fileID: 5910322}
   m_Layer: 0
   m_Name: First Person Player
   m_TagString: Untagged
@@ -151,9 +152,30 @@ Transform:
   m_Children:
   - {fileID: 15959411}
   - {fileID: 555985839}
+  - {fileID: 1745012297}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5910322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5910320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 160664cbbe5d9ac49b29b3b0ad45559d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 5910323}
+  speed: 12
+  gravity: -9.81
+  groundCheck: {fileID: 1745012297}
+  groundDistance: 0.4
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!143 &5910323
 CharacterController:
   m_ObjectHideFlags: 0
@@ -405,7 +427,7 @@ GameObject:
   - component: {fileID: 528259574}
   - component: {fileID: 528259573}
   - component: {fileID: 528259572}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Terrain_(-1000.0, 0.0, -1000.0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -560,7 +582,7 @@ GameObject:
   - component: {fileID: 629771878}
   - component: {fileID: 629771877}
   - component: {fileID: 629771876}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Terrain_(0.0, 0.0, -1000.0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -636,7 +658,7 @@ GameObject:
   - component: {fileID: 637825318}
   - component: {fileID: 637825317}
   - component: {fileID: 637825316}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Terrain_(-1000.0, 0.0, 0.0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -712,7 +734,7 @@ GameObject:
   - component: {fileID: 988965446}
   - component: {fileID: 988965445}
   - component: {fileID: 988965444}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -776,4 +798,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1745012296
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1745012297}
+  m_Layer: 0
+  m_Name: Player Ground Check
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1745012297
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745012296}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.8, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5910321}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
