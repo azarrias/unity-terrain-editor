@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController controller;
     public float speed = 12f;
     public float gravity = -9.81f;
+    public float jumpHeight = 3f;
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
@@ -28,6 +29,13 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 motion = transform.right * x + transform.forward * z;
         controller.Move(motion * speed * Time.deltaTime);
+
+
+        if(Input.GetButtonDown("Jump") && isGrounded)
+        {
+            // free fall velocity formula
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+        }
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
